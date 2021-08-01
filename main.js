@@ -52,6 +52,16 @@ Array(200).fill(undefined, undefined, undefined).forEach(addStar)
 const spaceTexture = new THREE.TextureLoader().load('./pictures/space.jpg')
 scene.background = spaceTexture;
 
+
+// avatar
+const avatar = new THREE.TextureLoader().load('./pictures/312321.png');
+
+const me = new THREE.Mesh(
+    new THREE.BoxGeometry(3,3,3),
+    new THREE.MeshBasicMaterial({map:avatar})
+);
+scene.add(me);
+
 function animate() {
     requestAnimationFrame( animate);
 
