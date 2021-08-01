@@ -34,12 +34,16 @@ const lightHelper = new THREE.PointLightHelper(pointLight)
 const gridHelper = new THREE.GridHelper(200,50);
 scene.add(lightHelper,gridHelper)
 
+const controls = new OrbitControls(camera,renderer.domElement);
+
 function animate() {
     requestAnimationFrame( animate);
 
     torrus.rotation.x += 0.01;
     torrus.rotation.y += 0.005;
     torrus.rotation.z += 0.01;
+
+    controls.update();
 
     renderer.render(scene, camera);
 }
